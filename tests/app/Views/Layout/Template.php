@@ -23,7 +23,7 @@
   <link href="<?= base_url('assets5') ?>/lib/owlcarousel/assets5/owl.carousel.min.css" rel="stylesheet">
 
   <!-- Customized Bootstrap Stylesheet -->
-  <link href="<?= base_url('assets5') ?>/css/style.css" rel="stylesheet">
+  <link href="<?= base_url('assets5') ?>/css/" rel="stylesheet">
 </head>
 
 <body>
@@ -70,7 +70,7 @@
       <div class="col-lg-4">
         <a href="http://localhost/kolomdesa/public/" class="text-decoration-none">
           <span class="h1 text-uppercase text-danger bg-whith px-2">KOLOM</span>
-          <span class="h1 text-uppercase text-secondary bg-success px-2 ml-n1">DESA </span>
+          <span class="h1 text-uppercase text-secondary bg-success px-2 ml-n1">DOSA </span>
         </a>
       </div>
 
@@ -137,14 +137,14 @@
 
           </div>
           <div class="btn-group">
-        <button type="button" class="btn btn-sm btn-success dropdown-toggle" data-toggle="dropdown">My Account</button>
-        <div class="dropdown-menu dropdown-menu-right">
-          <li><a href="<?= base_url() ?>/login" class="dropdown-item">Sign In</a></li>
-          <li><a href="<?= base_url() ?>/register" class="dropdown-item">Sign Up</a></li>
-        </div>
+            <button type="button" class="btn btn-sm btn-success dropdown-toggle" data-toggle="dropdown">My Account</button>
+            <div class="dropdown-menu dropdown-menu-right">
+              <li><a href="<?= base_url() ?>/login" class="dropdown-item">Sign In</a></li>
+              <li><a href="<?= base_url() ?>/register" class="dropdown-item">Sign Up</a></li>
+            </div>
+          </div>
       </div>
-      </div>
-      
+
       </nav>
     </div>
   </div>
