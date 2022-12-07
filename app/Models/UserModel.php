@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Models;
+
+use CodeIgniter\Model;
+
+class UserModel extends Model
+{
+
+
+    protected $table = "user";
+    protected $primaryKey = "username";
+    protected $returnType = "object";
+    protected $useTimestamps = true;
+    protected $allowedFields = ['username', 'password', 'nama', 'email', 'no_hp', 'created_at', 'updated_at'];
+
+    public function getUserLogin($username, $password)
+    {
+
+        return $this->getWhere(['username' => $username, 'password' => $password])->getRowArray();
+    }
+}
