@@ -40,7 +40,7 @@
         <div class="col-lg-12 col-md-8">
             <div class="container">
                 <div class="d-flex justify-content-between ">
-                    <div class="bg-success text-light text-center py-2 col-lg-2" style="width: 300px;">KOLOM DOSA</div>
+                    <div class="bg-success text-light text-center py-2 col-lg-2" style="width: 300px;">KOLOM DESA</div>
                     <div class="owl-carousel owl-carousel-1 tranding-carousel text-dark position-relative d-inline-flex align-items-center ml-2" style="width: calc(100% - 100px); padding-left: 90px;">
                         <div class="text-truncate"> Suara Desa, Suara Indonesia </div>
                         <div class="text-truncate"> Suara Desa, Suara Indonesia </div>
