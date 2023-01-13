@@ -40,11 +40,12 @@ $routes->set404Override();
 //Home
 $routes->get('/', 'Home::index');
 $routes->get('/pencarian', 'Home::Pencarian');
-$routes->get('/Internasional', 'ListBerita::Internasional');
+$routes->get('/Desa', 'ListBerita::Desa');
 $routes->get('/Nasional', 'ListBerita::Nasional');
 $routes->get('/Daerah', 'ListBerita::Daerah');
 $routes->get('/Jajanan', 'ListBerita::Jajanan');
 $routes->get('/Tradisi', 'ListBerita::Tradisi');
+$routes->get('/Permainan', 'ListBerita::Permainan');
 $routes->get('/Analisa', 'ListBerita::Analisa');
 $routes->get('/Desa_Wisata', 'ListBerita::Desa_Wisata');
 $routes->get('/Tokoh_Desa', 'ListBerita::Tokoh_Desa');
@@ -52,6 +53,10 @@ $routes->get('/Bum_Desa', 'ListBerita::Bum_Desa');
 $routes->get('/Kabar_Desa', 'ListBerita::Kabar_Desa');
 $routes->get('/Foto', 'ListBerita::Foto');
 $routes->get('/Video', 'ListBerita::Video');
+$routes->get('/VideoInovasi', 'ListBerita::VideoInovasi');
+$routes->get('/Infografis', 'ListBerita::Infografis');
+$routes->get('/DanaDesa', 'ListBerita::DanaDesa');
+$routes->get('/BumDes', 'ListBerita::BumDes');
 
 //Form Login
 $routes->get('/register', 'Register::index');
@@ -104,7 +109,8 @@ $routes->get('berita/tambah', 'ListBerita::Tambah');
 $routes->post('berita/simpan', 'ListBerita::Simpan');
 $routes->get('berita/edit/(:num)', 'ListBerita::Edit/$1');
 $routes->post('berita/update/(:num)', 'ListBerita::Update/$1');
-$routes->get('berita/delete/(:num)', 'ListBerita::Delete/$1');
+$routes->get('/berita/delete/(:num)', 'ListBerita::delete/$1');
+$routes->get('berita/detail/(:any)', 'ListBerita::Detail/$1');
 $routes->get('berita/detail/(:num)', 'ListBerita::Detail/$1');
 $routes->get('berita/komentar/', 'ListBerita::komentar');
 

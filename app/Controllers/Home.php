@@ -9,14 +9,10 @@ use App\Models\VideoModel;
 class Home extends BaseController
 {
     protected $list_berita;
-    protected $foto;
-    protected $video;
 
     function __construct()
     {
         $this->list_berita = new ListBeritaModel();
-        $this->Foto = new FotoModel();
-        $this->Video = new VideoModel();
     }
 
     public function index()
@@ -24,19 +20,14 @@ class Home extends BaseController
         $list_berita = new ListBeritaModel();
         $Video = new VideoModel();
         $Foto = new FotoModel();
-        $data['headline'] = $list_berita->orderBy('id_berita', 'DESC')->where('headline', 'Ya')->findAll('3', '0');
-        $data['headline1'] = $list_berita->orderBy('id_berita', 'DESC')->where('headline', 'Ya')->findAll('8', '3');
-        $data['trending'] = $list_berita->orderBy('id_berita', 'DESC')->findAll('8', '0');
-        $data['populer'] = $list_berita->orderBy('id_berita', 'DESC')->where('pilihan', 'Ya')->findAll('6', '0');
-        $data['utama'] = $list_berita->orderBy('id_berita', 'DESC')->where('berita_utama', 'Ya')->findAll('6', '0');
-        $data['Tokoh'] = $list_berita->orderBy('id_berita', 'DESC')->where('id_kategori', 'Tokoh Desa')->findAll('6', '0');
-        $data['wisata'] = $list_berita->orderBy('id_berita', 'DESC')->where('id_kategori', 'Desa Wisata')->findAll('2', '0');
-        $data['wisata1'] = $list_berita->orderBy('id_berita', 'DESC')->where('id_kategori', 'Desa Wisata')->findAll('4', '2');
-        $data['berita'] = $list_berita->orderBy('id_berita', 'DESC')->findAll('5', '0');
-        $data['foto'] = $Foto->orderBy('id_foto', 'DESC')->findAll();
-        $data['video'] = $Video->orderBy('id_video', 'DESC')->findAll();
-        // $data['berita'] = $list_berita->orderBy('id_berita', 'DESC')->where('id_kategori', 'Internasional')->findAll('2', '0');
-        return view('Layout2/Content', $data);
+        // $data['list_berita'] = $databerita;
+        $data['berita'] = $list_berita->orderBy('id_berita', 'DESC')->findAll();
+        $data['nasional'] = $list_berita->orderBy('id_berita', 'DESC')->where('id_kategori', 'Nasional')->findAll('1', '0');
+        $data['daerah'] = $list_berita->orderBy('id_berita', 'DESC')->where('id_kategori', 'Daerah')->findAll('1', '0');
+        $data['desa'] = $list_berita->orderBy('id_berita', 'DESC')->where('id_kategori', 'Desa')->findAll('1', '0');
+        $data['dw'] = $list_berita->orderBy('id_berita', 'DESC')->where('id_kategori', 'Desa Wisata')->findAll('3', '0');
+        $data['bumdesa'] = $list_berita->orderBy('id_berita', 'DESC')->where('id_kategori', 'BUM Desa')->findAll('3', '0');
+        return view('Layout4/Content', $data);
     }
 
     function Kategori($id)

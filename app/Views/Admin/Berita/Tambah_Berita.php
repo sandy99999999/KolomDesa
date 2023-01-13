@@ -11,14 +11,14 @@
             </div>
             <div class="card-body">
                 <?php if (!empty(session()->getFlashdata('error'))) : ?>
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <h4>Periksa Entrian Form</h4>
-                        </hr />
-                        <?php echo session()->getFlashdata('error'); ?>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <h4>Periksa Entrian Form</h4>
+                    </hr />
+                    <?php echo session()->getFlashdata('error'); ?>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
                 <?php endif; ?>
                 <form method="post" action="<?= base_url('berita/simpan') ?>">
                     <?= csrf_field(); ?>
@@ -31,18 +31,19 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-form-label col-md-3 col-sm-3 ">Sub Judul</label>
+                        <label class="col-form-label col-md-3 col-sm-3 ">Alamat</label>
                         <div class="col-md-9 col-sm-9 ">
-                            <input type="text" class="form-control" name="sub_judul">
+                            <input type="text" class="form-control" name="tag_berita" placeholder="Untuk Desa Wisata">
                         </div>
                     </div>
 
-                    <div class="form-group row">
+                    <!-- <div class="form-group row">
                         <label class="col-form-label col-md-3 col-sm-3 ">Video Youtube</label>
                         <div class="col-md-9 col-sm-9 ">
-                            <input type="url" class="form-control" name="video_youtube" placeholder='Contoh link: http://www.youtube.com/embed/xbuEmoRWQHU'>
+                            <input type="url" class="form-control" name="video_youtube"
+                                placeholder='Contoh link: http://www.youtube.com/embed/xbuEmoRWQHU'>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- <div class="form-group">
                     <label for="kategori">Kategori</label>
@@ -61,72 +62,78 @@
                         <div class="col-md-9 col-sm-9 ">
                             <select class="form-control" name="id_kategori">
                                 <option value='' selected>- Pilih Kategori -</option>
-                                <option>Internasional</option>
                                 <option>Nasional</option>
+                                <option>Daerah</option>
                                 <option>Daerah</option>
                                 <option>Jajanan</option>
                                 <option>Tradisi</option>
-                                <option>Analisa</option>
+                                <option>Permainan Tradisional</option>
+                                <option>Infografis</option>
                                 <option>Desa Wisata</option>
-                                <option>Tokoh Desa</option>
                                 <option>BUM Desa</option>
                                 <option>Kabar Desa</option>
+                                <option>Regulasi - Bum Desa</option>
+                                <option>Dana Desa</option>
                             </select>
                         </div>
                     </div>
 
 
-                    <div class="form-group row">
+                    <!-- <div class="form-group row">
                         <label class="control-label col-md-3 col-sm-3">Headline</label>
                         <div class="col-md-9 col-sm-9 ">
                             <p>
                                 Ya:
-                                <input type="radio" class="flat" name="headline" id="genderM" value="Ya" checked="" required /> Tidak:
+                                <input type="radio" class="flat" name="headline" id="genderM" value="Ya" checked=""
+                                    required /> Tidak:
                                 <input type="radio" class="flat" name="headline" id="genderF" value="Tidak" />
                             </p>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="form-group row">
                         <label class="col-form-label col-md-3 col-sm-3 ">Pilihan</label>
                         <div class="col-md-9 col-sm-9 ">
                             <p>
                                 Ya:
-                                <input type="radio" class="flat" name="pilihan" id="genderM" value="Ya" checked="" required /> Tidak:
+                                <input type="radio" class="flat" name="pilihan" id="genderM" value="Ya" checked=""
+                                    required /> Tidak:
                                 <input type="radio" class="flat" name="pilihan" id="genderF" value="Tidak" />
                             </p>
                         </div>
                     </div>
 
-                    <div class="form-group row">
+                    <!-- <div class="form-group row">
                         <label class="col-form-label col-md-3 col-sm-3 ">Berita Utama</label>
                         <div class="col-md-9 col-sm-9 ">
                             <p>
                                 Ya:
-                                <input type="radio" class="flat" name="berita_utama" id="genderM" value="Ya" checked="" required /> Tidak:
+                                <input type="radio" class="flat" name="berita_utama" id="genderM" value="Ya" checked=""
+                                    required /> Tidak:
                                 <input type="radio" class="flat" name="berita_utama" id="genderF" value="Tidak" />
                             </p>
                         </div>
-                    </div>
+                    </div> -->
 
 
                     <div class="form-group row">
                         <label class="col-form-label col-md-3 col-sm-3 ">Isi Berita</label>
                         <div class="col-md-9 col-sm-9 ">
-                            <textarea id="editor" class="form-control" name="isi_berita" style='height:260px'></textarea>
+                            <textarea id="editor" class="form-control" name="isi_berita"
+                                style='height:260px'></textarea>
                         </div>
                     </div>
                     <style>
-                        .ck-editor__editable_inline {
-                            min-height: 400px;
-                        }
+                    .ck-editor__editable_inline {
+                        min-height: 400px;
+                    }
                     </style>
                     <script>
-                        ClassicEditor
-                            .create(document.querySelector('#editor'))
-                            .catch(error => {
-                                console.error(error);
-                            });
+                    ClassicEditor
+                        .create(document.querySelector('#editor'))
+                        .catch(error => {
+                            console.error(error);
+                        });
                     </script>
 
                     <div class="form-group row">
@@ -204,13 +211,13 @@
                 <script src="<?= base_url('ckeditor5/ckeditor.js') ?>" type="text/javascript"></script>
 
                 <script>
-                    ClassicEditor
-                        .create(document.querySelector('#isi_berita'))
-                        .then(editor => {
-                            console.log(editor);
-                        })
-                        .catch(error => {
-                            console.error(error);
-                        });
+                ClassicEditor
+                    .create(document.querySelector('#isi_berita'))
+                    .then(editor => {
+                        console.log(editor);
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    });
                 </script>
                 <?= $this->endSection() ?>

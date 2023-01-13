@@ -1,4 +1,4 @@
-<?= $this->include('Layout2/Header2') ?>
+<?= $this->include('Layout4/Header') ?>
 
 <!-- Top News Slider Start -->
 <div class="container-fluid ml-1ß py-3">
@@ -164,4 +164,4 @@
 
 <!-- partial -->
 
-<?= $this->include('Layout2/Footer2') ?>
+<?= $this->include('Layout4/Footer') ?>

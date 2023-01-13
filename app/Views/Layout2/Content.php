@@ -94,7 +94,7 @@
                                         <a class="align-bottom text-alert-success" href=""><?= $brt->id_kategori; ?></a>
                                         <span class="px-1">/</span>
                                         <span><?= $brt->created_at; ?></span>
-                                        <hr class="border border-primary border-1 opacity-50">
+                                        <!-- <hr class="border border-primary border-1 opacity-50"> -->
                                     </div>
 
 
